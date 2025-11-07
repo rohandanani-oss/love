@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Special Postcard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="center-content">
+    <div class="container">
+        <h1>It's A Message Just For You</h1>
+        
+        <div class="postcard shimmer-animation" id="postcardButton">
+            <span class="postcard-icon">💌</span>
+            <p class="postcard-text">
+                Click this beautiful card to reveal the words inside!
+            </p>
+        </div>
+        
+        <div class="message-box hidden" id="loveMessage">
+            <h2 class="heartbeat-animation">My One and Only,</h2>
+            <p>
+                From the moment you entered my life, every day has felt brighter. Your kindness, your laughter, and the beautiful way you see the world inspire me endlessly. You are my greatest adventure and my safest comfort. This little digital gift can't contain all the love I have for you!
+            </p>
+            <p class="signature">- Forever and Always Yours ❤️</p>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById('postcardButton').addEventListener('click', function() {
+            var messageBox = document.getElementById('loveMessage');
+            var postcardText = this.querySelector('.postcard-text');
+            var postcardIcon = this.querySelector('.postcard-icon');
+
+            // Hide the shimmer and initial text
+            this.classList.remove('shimmer-animation');
+            postcardText.style.display = 'none';
+            postcardIcon.textContent = '✨'; // Change icon once opened
+
+            // Show the love message with animation
+            messageBox.classList.remove('hidden');
+            messageBox.classList.add('fade-in-message');
+
+            // Style the postcard to look "opened"
+            this.style.backgroundColor = '#f7d0e0'; 
+            this.style.boxShadow = '0 0 15px rgba(255, 105, 180, 0.7)';
+            this.style.cursor = 'default';
+        });
+    </script>
+</body>
+</html>
