@@ -1,0 +1,173 @@
+body {
+    /* Using a softer, gradient background */
+    background: linear-gradient(135deg, #ffc0cb 0%, #ffe6f2 100%); 
+    font-family: 'Dancing Script', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #4a4a4a;
+    min-height: 100vh;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.container {
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 450px;
+    border: 3px solid #ff69b4; /* Romantic border */
+}
+
+h1 {
+    color: #d11270; /* Deep rose pink */
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+/* --- Flower Link Styling (index.html) --- */
+.flower-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #d11270;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.flower-link:hover {
+    transform: scale(1.15); 
+    color: #ff1493;
+}
+
+.flower-icon {
+    font-size: 10rem; 
+    display: block;
+    line-height: 1;
+}
+
+.flower-link p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* --- Postcard Styling (second_page.html) --- */
+.postcard {
+    background-color: #ffb6c1; /* Light Pink */
+    border: 5px solid #d11270;
+    border-radius: 15px;
+    padding: 40px 20px;
+    margin: 30px 0;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Needed for shimmer effect */
+}
+
+.postcard-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.postcard-text {
+    font-size: 1.3rem;
+    color: #4a4a4a;
+    font-weight: 500;
+}
+
+/* --- Love Message Styling --- */
+.message-box {
+    text-align: center;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 15px;
+    background-color: #fff0f5; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px dashed #ff69b4;
+    opacity: 0; /* Starts hidden for fade-in */
+}
+
+.message-box h2 {
+    color: #d11270;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.message-box p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    font-family: sans-serif; /* Readable font for long message */
+    color: #666;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #d11270;
+    font-size: 1.2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ==================== ANIMATIONS ==================== */
+
+/* 1. Flower Pulse (index.html) */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); opacity: 0.8; }
+    100% { transform: scale(1); }
+}
+.pulse-animation {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* 2. Postcard Shimmer (second_page.html) */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+.shimmer-animation {
+    background: linear-gradient(90deg, #ffb6c1 0%, #ffffff 50%, #ffb6c1 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite linear;
+}
+
+/* 3. Message Fade-In */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-message {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* 4. Heading Heartbeat (Subtle, to draw eye to message) */
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.02); }
+}
+.heartbeat-animation {
+    animation: heartbeat 3s infinite ease-in-out;
+}
